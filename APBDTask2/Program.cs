@@ -14,24 +14,22 @@ namespace Tutorial2
             FileInfo log;
 
             var path = "";
-            //  string errorInfo = @"C:\Users\Yzrsa\OneDrive\Masaüstü\4.Semester\APBD\Tutorial2\Tutorial2_Student_bySamet\Tutorial2\log.txt";
+            
             var list = new HashSet<Student>(new CustomComparer());
             try
-            { //log = new FileInfo(errorInfo);
-              //StreamWriter sw = log.CreateText();
-
+            {
                 using var s = new StreamWriter(@"log.txt");
                 path = @"NewFolder\data.csv";
                 var fi = new FileInfo(path);
                 
-                // FileStream s = new FileStream("log.txt", FileMode.Open);
+               
                 using (var stream = new StreamReader(fi.OpenRead()))
                 {
                     string line = null;
                     while ((line = stream.ReadLine()) != null)
                     {
                         String[] ar = line.Split(",");
-                        // mantık, eğer legnth 9 degilse ifade et, 9 sa null mı degilmi kontrol et. 
+                       
                         var checker = true;
                         foreach (String e in ar)
                         {
@@ -39,9 +37,7 @@ namespace Tutorial2
                             {
                                 checker = false;
                             }
-
                         }
-
                         if (checker == false)
                         {
                             s.WriteLine(line);
@@ -72,7 +68,7 @@ namespace Tutorial2
                             }
                           
                         }
-                        // bu kriterleri geçenleri xml e çevirmemiz gerekecek. Obje oluşturup listeye koyucaz. 
+                        
                         Console.WriteLine(line);
 
                     }

@@ -44,11 +44,7 @@ namespace Tutorial2
 
                         if (checker == false)
                         {
-
-                          
                             s.WriteLine(line);
-
-
                         }
                         else
                         {
